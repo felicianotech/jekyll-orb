@@ -1,0 +1,12 @@
+version: 2.1
+description: "Common CircleCI tasks for Jekyll, a Static Site Generator (SSG)."
+
+executors:
+  default:
+    parameters:
+      version:
+        description: "The Jekyll version and Docker tag."
+        type: string
+        default: "latest"
+    docker:
+      - image: cibuilds/jekyll:<< parameters.version >>
